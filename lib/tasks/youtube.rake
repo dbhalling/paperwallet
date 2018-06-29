@@ -14,9 +14,13 @@ namespace :youtube do
   uri = URI(url)
   response = Net::HTTP.get(uri)
   youTube_data = JSON.parse(response)
-  puts youTube_data["items"][0]["snippet"]["title"]
-  puts youTube_data["items"][0]["snippet"]["channelId"]
-  puts youTube_data["items"][0]["id"]["videoId"]
+  ytTitle = youTube_data["items"][0]["snippet"]["title"]
+  ytChannelId = youTube_data["items"][0]["snippet"]["channelId"]
+  ytVideoId =  youTube_data["items"][0]["id"]["videoId"]
+  
+  puts ytTitle
+  puts ytChannelId
+  puts ytVideoId
   
   
   
