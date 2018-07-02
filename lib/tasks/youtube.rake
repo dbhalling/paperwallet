@@ -8,7 +8,7 @@ namespace :youtube do
   
   API_Key = 'AIzaSyBQAeRsVuWubChoccGqJDDdlXErOnI2YEo'
   baseUrl = 'https://www.googleapis.com/youtube/v3/'
-  publishedAfter = ((DateTime.now.getutc - 7).to_datetime.rfc3339).slice(0..16) + '00Z'
+  publishedAfter = ((DateTime.now.getutc - 1.days).to_datetime.rfc3339).slice(0..16) + '00Z'
   puts publishedAfter
       
   url = "#{baseUrl}search?part=snippet&q=bitcoin&type=video&maxResults=25&publishedAfter=#{publishedAfter}&key=#{API_Key}"
